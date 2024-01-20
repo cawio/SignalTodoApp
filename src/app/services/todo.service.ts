@@ -46,6 +46,10 @@ export class TodoService {
   public deleteTodoById(id: number): void {
     this.internalTodos.update(todos => todos.filter(todo => todo.id !== id));
   }
+
+  public addTodo = (todo: TodoDTO): void => {
+    this.internalTodos.update(todos => [...todos, { ...todo, id: todos.length + 1 }]);
+  }
 }
 
 const mockTodos: TodoDTO[] = [
