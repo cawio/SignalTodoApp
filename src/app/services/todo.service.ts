@@ -55,79 +55,72 @@ export class TodoService {
 const mockTodos: TodoDTO[] = [
   {
     id: 1,
-    title: 'Learn Angular',
-    description: 'Learn Angular using the official tutorial',
+    title: 'Organize Team Building Event',
+    description: 'Coordinate with the events company to organize a team building activity for next month.',
     isCompleted: false,
-    date: new Date('2021-01-01')
+    date: new Date('2023-07-05')
   },
   {
     id: 2,
-    title: 'Learn React',
-    description: 'Learn React using the official tutorial',
-    isCompleted: false,
-    date: new Date('2021-01-02')
+    title: 'Prepare Financial Report',
+    description: 'Compile and prepare the financial report for Q2 and submit it to the finance department.',
+    isCompleted: true,
+    date: new Date('2023-07-12')
   },
   {
     id: 3,
-    title: 'Learn Vue',
-    description: 'Learn Vue using the official tutorial',
+    title: 'Update Website Content',
+    description: 'Review and update the about us and careers page content on the company website.',
     isCompleted: false,
-    date: new Date('2021-01-03')
+    date: new Date('2023-07-20')
   },
   {
     id: 4,
-    title: 'Learn Svelte',
-    description: 'Learn Svelte using the official tutorial',
-    isCompleted: false,
-    date: new Date('2021-01-04')
+    title: 'Plan Marketing Campaign',
+    description: 'Plan the upcoming marketing campaign, including budget allocation and target demographics.',
+    isCompleted: true,
+    date: new Date('2023-08-01')
   },
   {
     id: 5,
-    title: 'Learn AngularJS',
-    description: 'Learn AngularJS using the official tutorial',
+    title: 'Conduct Employee Surveys',
+    description: 'Create and distribute employee satisfaction surveys to gather feedback on workplace environment.',
     isCompleted: false,
-    date: new Date('2021-01-05')
+    date: new Date('2023-08-15')
   },
   {
     id: 6,
-    title: 'Learn React Native',
-    description: 'Learn React Native using the official tutorial',
+    title: 'Inventory Check',
+    description: 'Carry out a comprehensive inventory check and reconcile any discrepancies.',
     isCompleted: false,
-    date: new Date('2021-01-06')
+    date: new Date('2023-09-05')
   },
   {
     id: 7,
-    title: 'Learn Vue Native',
-    description: 'Learn Vue Native using the official tutorial',
-    isCompleted: false,
-    date: new Date('2021-01-07')
+    title: 'Organize Training Session',
+    description: 'Organize a training session for new software tools recently introduced to the team.',
+    isCompleted: true,
+    date: new Date('2023-09-20')
   },
   {
     id: 8,
-    title: 'Learn Svelte Native',
-    description: 'Learn Svelte Native using the official tutorial',
+    title: 'Renew Office Lease',
+    description: 'Negotiate terms and renew the office lease agreement for the upcoming year.',
     isCompleted: false,
-    date: new Date('2021-01-08')
+    date: new Date('2023-10-01')
   },
   {
     id: 9,
-    title: 'Learn AngularDart',
-    description: 'Learn AngularDart using the official tutorial',
+    title: 'Evaluate New Project Proposals',
+    description: 'Review and evaluate the new project proposals submitted by the R&D department.',
     isCompleted: false,
-    date: new Date('2021-01-09')
+    date: new Date('2023-10-15')
   },
   {
     id: 10,
-    title: 'Learn React Dart',
-    description: 'Learn React Dart using the official tutorial',
-    isCompleted: false,
-    date: new Date('2021-01-10')
-  },
-  {
-    id: 11,
-    title: 'Learn Vue Dart',
-    description: 'Learn Vue Dart using the official tutorial',
-    isCompleted: false,
-    date: new Date('2021-01-11')
+    title: 'Health and Safety Audit',
+    description: 'Conduct a health and safety audit to ensure the workplace meets regulatory standards.',
+    isCompleted: true,
+    date: new Date('2023-11-01')
   },
 ]
