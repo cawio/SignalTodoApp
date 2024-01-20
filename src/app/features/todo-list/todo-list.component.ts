@@ -52,4 +52,8 @@ export class TodoListComponent {
   public onResetFilterClicked(): void {
     this.todoFilter.set('');
   }
+
+  public onAddTodoClicked(): void {
+
+  }
 }
