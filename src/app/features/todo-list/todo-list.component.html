@@ -1,0 +1,24 @@
+<div class="controls-container">
+    <mat-form-field appearance="outline">
+        <mat-label>Filter</mat-label>
+        <input
+            matInput
+            [ngModel]="todoFilter()"
+            (ngModelChange)="onTodoFilterChanged($event)">
+        <button matIconSuffix mat-icon-button (click)="onResetFilterClicked()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <button mat-fab (click)="onRefreshTodosClicked()" matTooltip="Reset">
+        <mat-icon>refresh</mat-icon>
+    </button>
+</div>
+<div class="list-container">
+    @for (todo of todos(); track todo.id) {
+        <app-todo
+            [todo]="todo"
+            (completeTodo)="onTodoCompleteClicked(todo.id)"
+            (uncompleteTodo)="onTodoUncompleteClicked(todo.id)"
+            (deleteTodo)="onTodoDeleteClicked(todo.id)"></app-todo>
+    }
+</div>

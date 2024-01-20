@@ -1,0 +1,12 @@
+.todo-card {
+    min-width: 200px;
+}
+
+.actions-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.complete {
+    opacity: 0.5;
+}

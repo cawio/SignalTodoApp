@@ -1,0 +1,32 @@
+@if (todo) {
+    <mat-card class="todo-card" [ngClass]="todo.isCompleted ? 'complete' : ''">
+        <mat-card-header>
+            <mat-card-title>
+                <h3>{{ todo.title }}</h3>
+                @if (todo.isCompleted) {
+                    <mat-icon>check_circle</mat-icon>
+                }
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{ todo.description }}</p>
+        </mat-card-content>
+        <mat-card-actions class="actions-container">
+            @if (!todo.isCompleted) {
+                <button mat-button color="accent" (click)="completeTodo.emit(todo.id)">Complete</button>
+            } @else {
+                <button mat-button color="accent" (click)="uncompleteTodo.emit(todo.id)">Undo Complete</button>
+            }
+            <button mat-button color="warn" (click)="deleteTodo.emit(todo.id)">Delete</button>
+        </mat-card-actions>
+        <mat-card-footer>
+            <mat-card-subtitle>
+                <p style="padding-left: 1em;">Created at: {{ todo.date | date }}</p>
+            </mat-card-subtitle>
+        </mat-card-footer>
+    </mat-card>
+} @else {
+    <mat-card>
+        <mat-card-title>loading your todo...</mat-card-title>
+    </mat-card>
+}
