@@ -37,8 +37,13 @@ export class TodoService {
 
   public updateTodoStatus(id: number, isCompleted: boolean): void {
     this.internalTodos.update(todos => {
-      const todoIndex = todos.findIndex(todo => todo.id === id);
-      todos[todoIndex].isCompleted = isCompleted;
+      const todo = todos.find(todo => todo.id === id);
+
+      if (!todo) {
+        return todos;
+      }
+
+      todo.isCompleted = isCompleted;
       return todos;
     });
   }
