@@ -1,6 +1,6 @@
 import { Injectable, computed, signal } from '@angular/core';
-import { TodoDTO } from '../dtos/TodoDTO';
 import { Observable, delay, firstValueFrom, of } from 'rxjs';
+import { TodoDTO } from '../dtos/TodoDTO';
 import { LoadingService } from '../features/loading-spinner/services/loading.service';
 
 @Injectable({
