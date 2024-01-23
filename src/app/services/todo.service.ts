@@ -32,7 +32,7 @@ export class TodoService {
   }
 
   private fetchTodos(): Observable<TodoDTO[]> {
-    return of(mockTodos).pipe(delay(1000));
+    return of(mockTodos).pipe(delay(Math.random() * 5000));
   }
 
   public updateTodoStatus(id: number, isCompleted: boolean): void {
