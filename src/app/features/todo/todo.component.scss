@@ -1,5 +1,13 @@
+:host {
+    width: 250px;
+    height: 450px;
+}
+
 .todo-card {
-    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
 }
 
 .actions-container {
@@ -9,4 +17,13 @@
 
 .complete {
     opacity: 0.5;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+.content-container {
+    overflow: auto;
+    scrollbar-width: thin;
 }
