@@ -10,6 +10,11 @@
     height: 100%;
 }
 
+.todo-card:hover {
+    transform: scale(1.025);
+    border: white 1px solid;
+}
+
 .actions-container {
     display: flex;
     justify-content: space-evenly;
