@@ -27,7 +27,7 @@ import { TodosStore } from '../store/todos.store';
   styleUrl: './todo-list.component.scss'
 })
 export class TodoListComponent {
-  store = inject(TodosStore);
+  private readonly store = inject(TodosStore);
   todos = this.store.filteredTodos;
   todoFilter = this.store.filter;
 
