@@ -5,7 +5,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { TodoService } from '../../services/todo.service';
 import { TodoComponent } from '../todo/todo.component';
 import { MatDialog } from '@angular/material/dialog';
 import { AddTodoDialogComponent } from '../add-todo-dialog/add-todo-dialog.component';
@@ -31,7 +30,7 @@ export class TodoListComponent {
   todos = this.store.filteredTodos;
   todoFilter = this.store.filter;
 
-  constructor(private todoService: TodoService, private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog) { }
 
   public onTodoDeleteClicked(id: number): void {
     this.store.deleteTodo(id);
