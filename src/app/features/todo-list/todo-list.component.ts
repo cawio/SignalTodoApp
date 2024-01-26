@@ -49,8 +49,8 @@ export class TodoListComponent {
     this.store.setFilter(filter);
   }
 
-  public onRefreshTodosClicked(): void {
-    this.todoService.refreshTodos();
+  public async onRefreshTodosClicked(): Promise<void> {
+    await this.store.load()
   }
 
   public onResetFilterClicked(): void {

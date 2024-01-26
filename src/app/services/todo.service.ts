@@ -1,59 +1,17 @@
-import { Injectable, computed, signal } from '@angular/core';
-import { Observable, delay, firstValueFrom, of } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Observable, delay, of } from 'rxjs';
 import { TodoDTO } from '../dtos/TodoDTO';
-import { LoadingService } from '../features/loading-spinner/services/loading.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
-  private internalTodos = signal<TodoDTO[]>([]);
-  public todos = this.internalTodos.asReadonly();
-  public todoFilter = signal<string>('');
-  public filteredTodos = computed(() => {
-    const todoFilter = this.todoFilter().toLowerCase();
 
-    if (todoFilter === '') {
-      return this.todos();
-    }
+  constructor() { }
 
-    return this.internalTodos().filter(todo => todo.title.toLowerCase().includes(todoFilter));
-  });
-
-  constructor(private loadingService: LoadingService) {
-    this.refreshTodos();
-  }
-
-  public async refreshTodos(): Promise<void> {
-    this.loadingService.startLoading();
-    const todos = await firstValueFrom(this.fetchTodos());
-    this.internalTodos.set(todos);
-    this.loadingService.stopLoading();
-  }
-
-  private fetchTodos(): Observable<TodoDTO[]> {
-    return of(mockTodos).pipe(delay(Math.random() * 5000));
-  }
-
-  public updateTodoStatus(id: number, isCompleted: boolean): void {
-    this.internalTodos.update(todos => {
-      const todo = todos.find(todo => todo.id === id);
-
-      if (!todo) {
-        return todos;
-      }
-
-      todo.isCompleted = isCompleted;
-      return todos;
-    });
-  }
-
-  public deleteTodoById(id: number): void {
-    this.internalTodos.update(todos => todos.filter(todo => todo.id !== id));
-  }
-
-  public addTodo = (todo: TodoDTO): void => {
-    this.internalTodos.update(todos => [...todos, { ...todo, id: todos.length + 1 }]);
+  fetchTodos(): Observable<TodoDTO[]> {
+    const ms = Math.floor(Math.random() * 2000) + 1000;
+    return of(mockTodos).pipe(delay(ms));
   }
 }
 
